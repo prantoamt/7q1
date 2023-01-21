@@ -1,0 +1,24 @@
+[tool.pdm]
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Md Badiuzzaman Pranto", email = "prantoamt@gmail.com"},
+]
+dependencies = [
+    "Django==4.1.5",
+    "djangorestframework==3.14",
+    "markdown>=3.4.1",
+    "django-filter>=22.1",
+]
+
+[tool.pdm.scripts]
+startdev = "python3 assignment/manage.py runserver 0.0.0.0:8000"
+makemigrations = "python3 assignment/manage.py makemigrations"
+migrate = "python3 assignment/manage.py migrate"
+startapp = "python3 assignment/manage.py startapp"
+
+requires-python = ">=3.8"
+license = {text = "MIT"}
