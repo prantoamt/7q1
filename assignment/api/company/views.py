@@ -22,7 +22,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(data=serializer.data, status=status.HTTP_200_OK)
+            return self.get_paginated_response(data=serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
