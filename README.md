@@ -70,3 +70,15 @@ Congratulations! you have successfully run the project in development server. Yo
 -----
 An OpenApi 3 specification has been added to the project to explain and demonstrate the end-points.
 Please find the swagger specification at: `http://127.0.0.1:8000/api/schema/swagger-ui/`
+
+- To submit a list of keywords in `api/companies/`, you can write your query params as follows:
+    - `api/companies/?product=PTFE%HOSE&product=HIGH%PRESSURE%HOSES`
+    - I choosed this method to submit multiple values for one param because it is supported for most application and
+    django also recommends this method. Though there is no standard method to send multiple values. [Reference](https://stackoverflow.com/a/24728298/6092533).
+    - Exmaple req: 
+        ```
+        curl -X 'GET' \
+        'http://127.0.0.1:8000/api/companies/?product=HIGH%20PRESSURE%20HOSES&product=PTFE%HOSE' \
+        -H 'accept: application/json' \
+        -H 'Authorization: Token 183d43b34dbca3e58596fa43680ea0a09c38b7ee'
+        ```
