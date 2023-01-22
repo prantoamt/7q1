@@ -19,7 +19,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
     lookup_field = "id"
     http_method_names = ["get"]
 
-    def get_queryset(self, **kwargs) -> QuerySet:
+    def get_queryset(self, **kwargs: dict) -> QuerySet:
         return self.model.objects.filter(**kwargs)
 
     def list(self, request: request, *args: tuple, **kwargs: dict) -> Response:
