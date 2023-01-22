@@ -20,7 +20,7 @@ The section [Quick Start](#quick-start) has all the required steps to run the pr
 
 - A SQLite database is used for this project.
 - Few custom commands have been written in `app/administration/management/commands` to populate the database from provided files. 
-- A user is will be created with `username: john` and `password: j123j123` when you will run the project (Not SuperUser).
+- A user will be created with `username: john` and `password: j123j123` when you will run the project (Not SuperUser).
 - **Please use this user's credentials for api authentication.**
 
 
