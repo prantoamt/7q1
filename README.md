@@ -38,6 +38,10 @@ Clone this git repository to your local machine. Open your terminal and run the 
 ```
 git clone https://github.com/prantoamt/7q1.git
 ```
+If https does not work, please try with SSH:
+```
+git clone git@github.com:prantoamt/7q1.git
+```
 
 #### Goto the base directory
 ------------------------------------
