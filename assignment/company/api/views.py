@@ -11,7 +11,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
     model = Company
     serializer_class = CompanySerializer
     permission_classes = (AllowAny,)
-    lookup_field = 'uuid'
+    lookup_field = 'id'
     http_method_names = ['get']
 
     def get_queryset(self, **kwargs):
