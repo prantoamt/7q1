@@ -31,9 +31,8 @@ class CompanyProduct(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At")
 
-
     class Meta:
-        unique_together = [['company', 'product']]
+        unique_together = [["company", "product"]]
         verbose_name_plural = "Company products"
         db_table = "CompanyProducts"
 

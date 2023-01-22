@@ -6,6 +6,8 @@ from rest_framework import request
 from rest_framework.response import Response
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.types import OpenApiTypes
 
 # self imports
 from .serializers import CompanySerializer
@@ -20,19 +22,33 @@ class CompanyViewSet(viewsets.ModelViewSet):
     lookup_field = "id"
     http_method_names = ["get"]
 
-    def __init__(self, company_service = CompanyService(), **kwargs: dict[Any]) -> None:
+    def __init__(self, company_service=CompanyService(), **kwargs: dict[Any]) -> None:
         self.company_service = company_service
         super().__init__(**kwargs)
 
-    def build_kwargs_for_query(self, request: request):
-        kwargs = {}
-        products_query = request.query_params.getlist('products')
-        company_ids = self.company_service.fetch_company_ids_by_product_name(products_query)
-        kwargs['id__in'] = company_ids
-        return kwargs
-
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="product",
+                description="filter by product",
+                required=False,
+                type=str,
+                style="form",
+                location=OpenApiParameter.QUERY,
+                explode=False,
+                examples=[
+                    OpenApiExample(
+                        "Example 1",
+                        summary="Filters by the product keyword",
+                        description='Client can pass multiple value for product by appending &prodcut="product name" in query string',
+                        value="HIGH PRESSURE HOSES",
+                    )
+                ],
+            )
+        ]
+    )
     def list(self, request: request, *args: tuple, **kwargs: dict) -> Response:
-        kwargs = self.build_kwargs_for_query(request=request)
+        kwargs = self.company_service.build_kwargs_for_query(request=request)
         queryset = self.company_service.get_queryset(**kwargs)
         page = self.paginate_queryset(queryset)
         if page is not None:
