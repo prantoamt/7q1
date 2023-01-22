@@ -1,5 +1,5 @@
 .venv
 .vscode
 */__pycache__/
-static
+app/static/static_root
 app/db.sqlite3
