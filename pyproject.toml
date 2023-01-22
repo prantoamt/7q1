@@ -18,16 +18,16 @@ requires-python = ">=3.9"
 license = {text = "MIT"}
 
 [tool.pdm.scripts]
-startdev = "python3 assignment/manage.py runserver 0.0.0.0:8000"
-makemigrations = "python3 assignment/manage.py makemigrations"
-migrate = "python3 assignment/manage.py migrate"
-startapp = "python3 assignment/manage.py startapp"
-collectstatic = "python3 assignment/manage.py collectstatic"
-createsuperuser = "python3 assignment/manage.py createsuperuser"
-fetchcompanies = "python3 assignment/manage.py fetchcompanies"
-fetchproducts = "python3 assignment/manage.py fetchproducts"
-fetchcompanyproducts = "python3 assignment/manage.py fetchcompanyproducts"
-formatcode = "python3 -m black assignment"
+startdev = "python3 app/manage.py runserver 0.0.0.0:8000"
+makemigrations = "python3 app/manage.py makemigrations"
+migrate = "python3 app/manage.py migrate"
+startapp = "python3 app/manage.py startapp"
+collectstatic = "python3 app/manage.py collectstatic"
+createsuperuser = "python3 app/manage.py createsuperuser"
+fetchcompanies = "python3 app/manage.py fetchcompanies"
+fetchproducts = "python3 app/manage.py fetchproducts"
+fetchcompanyproducts = "python3 app/manage.py fetchcompanyproducts"
+formatcode = "python3 -m black app"
 
 [tool.pdm.dev-dependencies]
 formatter = [
