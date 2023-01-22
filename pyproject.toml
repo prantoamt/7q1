@@ -12,6 +12,7 @@ dependencies = [
     "djangorestframework==3.14",
     "markdown>=3.4.1",
     "django-filter>=22.1",
+    "drf-spectacular>=0.25.1",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}

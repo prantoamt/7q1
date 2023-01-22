@@ -41,6 +41,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "drf_spectacular",
 ]
 SELF_APPS = [
     "administration.apps.AdministrationConfig",
@@ -82,6 +83,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "assignment.wsgi.application"
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': '7q1 Assignment API',
+    'DESCRIPTION': 'Coding task',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
@@ -91,6 +100,7 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
