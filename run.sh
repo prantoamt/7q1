@@ -2,5 +2,6 @@
 pdm makemigrations
 pdm migrate
 pdm collectstatic --no-input
-pdm fetchcompany
+pdm fetchcompanies
+pdm fetchproducts
 pdm startdev

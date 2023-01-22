@@ -23,7 +23,8 @@ makemigrations = "python3 assignment/manage.py makemigrations"
 migrate = "python3 assignment/manage.py migrate"
 startapp = "python3 assignment/manage.py startapp"
 collectstatic = "python3 assignment/manage.py collectstatic"
-fetchcompany = "python3 assignment/manage.py fetchcompany"
+fetchcompanies = "python3 assignment/manage.py fetchcompanies"
+fetchproducts = "python3 assignment/manage.py fetchproducts"
 formatcode = "python3 -m black assignment"
 
 [tool.pdm.dev-dependencies]

@@ -1,5 +1,5 @@
-import json, csv, os
-from django.core.management.base import BaseCommand, CommandError
+import csv, os
+from django.core.management.base import BaseCommand
 from django.conf import settings
 from company.models import Company
 
@@ -8,8 +8,7 @@ BASE_DIR = settings.BASE_DIR
 
 class Command(BaseCommand):
     company_file_path = os.path.join(BASE_DIR, "files", "companies.csv")
-    print(company_file_path, "======")
-    help = "Created companies from provided file"
+    help = "Creates companies from provided file"
 
     def handle(self, *args, **options):
         with open(self.company_file_path) as csv_file:
@@ -33,5 +32,5 @@ class Command(BaseCommand):
                     )
 
         self.stdout.write(
-            self.style.SUCCESS('Total "%s" company created' % total_created)
+            self.style.SUCCESS('Total "%s" companies created' % total_created)
         )
