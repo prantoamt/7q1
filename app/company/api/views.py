@@ -59,4 +59,6 @@ class CompanyViewSet(viewsets.ModelViewSet):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request: request, *args: tuple, **kwargs: dict) -> Response:
-        return super().retrieve(request, *args, **kwargs)
+        query_set = self.company_service.get_queryset(**kwargs).first()
+        serializer = self.get_serializer(query_set)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
