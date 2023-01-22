@@ -87,11 +87,14 @@ WSGI_APPLICATION = "assignment.wsgi.application"
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "7q1 Assignment API",
-    "DESCRIPTION": "Coding task",
+    "DESCRIPTION": """The endpoints are protected by token authentication. 
+    Use the endpoint 'api/api-token-auth' to get the authentication token for a user.
+    To authenticate yourself, 
+    Click on the authorize button on the right corner and type 'Token your_api_key' and click authorize.""",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     # OTHER SETTINGS
-    'COMPONENT_SPLIT_REQUEST': True,
+    "COMPONENT_SPLIT_REQUEST": True,
 }
 
 REST_FRAMEWORK = {
