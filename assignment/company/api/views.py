@@ -5,7 +5,7 @@ from urllib import request
 from django.db.models.query import QuerySet
 from rest_framework.response import Response
 from rest_framework import viewsets, status
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 
 # self imports
 from .serializers import CompanySerializer
@@ -15,7 +15,7 @@ from company.models import Company
 class CompanyViewSet(viewsets.ModelViewSet):
     model = Company
     serializer_class = CompanySerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAuthenticated,)
     lookup_field = "id"
     http_method_names = ["get"]
 
