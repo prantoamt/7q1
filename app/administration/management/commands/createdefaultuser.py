@@ -9,14 +9,14 @@ class Command(BaseCommand):
     help = "Creates user for demo"
 
     def handle(self, *args, **options):
-        user, created = User.objects.get_or_create(username='john')
-        user.set_password('j123j123')
+        user, created = User.objects.get_or_create(username="john")
+        user.set_password("j123j123")
         user.save()
         if created:
             self.stdout.write(
-            self.style.SUCCESS(f'User created with username {user.username}')
-        )
+                self.style.SUCCESS(f"User created with username {user.username}")
+            )
         else:
             self.stdout.write(
-            self.style.WARNING(f'User with username {user.username} already exists')
-        )    
+                self.style.WARNING(f"User with username {user.username} already exists")
+            )

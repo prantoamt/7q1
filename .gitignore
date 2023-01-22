@@ -2,3 +2,4 @@
 .vscode
 */__pycache__/
 static
+app/db.sqlite3/

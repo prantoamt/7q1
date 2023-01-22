@@ -3,6 +3,7 @@
 # Third party imports
 from rest_framework import serializers
 from drf_spectacular.utils import extend_schema_field
+
 # Self imports
 from company.models import Company
 from product.models import Product

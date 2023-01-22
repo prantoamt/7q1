@@ -45,7 +45,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
                 ],
             )
         ],
-        description = "Returns the list of companies",
+        description="Returns the list of companies",
     )
     def list(self, request: request, *args: tuple, **kwargs: dict) -> Response:
         kwargs = self.company_service.build_kwargs_for_query(request=request)
@@ -58,9 +58,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-
     @extend_schema(
-        description = "Returns a company detail by id",
+        description="Returns a company detail by id",
     )
     def retrieve(self, request: request, *args: tuple, **kwargs: dict) -> Response:
         query_set = self.company_service.get_queryset(**kwargs).first()
