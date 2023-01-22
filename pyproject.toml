@@ -19,6 +19,8 @@ startdev = "python3 assignment/manage.py runserver 0.0.0.0:8000"
 makemigrations = "python3 assignment/manage.py makemigrations"
 migrate = "python3 assignment/manage.py migrate"
 startapp = "python3 assignment/manage.py startapp"
+collectstatic = "python3 assignment/manage.py collectstatic"
+
 
 requires-python = ">=3.8"
 license = {text = "MIT"}

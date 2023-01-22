@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,11 +43,14 @@ THIRD_PARTY_APPS =[
     "rest_framework",
 ]
 SELF_APPS = [
-    "product",
-    "company",
+    "administration.apps.AdministrationConfig",
+    "product.apps.ProductConfig",
+    "company.apps.CompanyConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
+
+AUTH_USER_MODEL = 'administration.User'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -78,6 +82,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "assignment.wsgi.application"
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -122,9 +138,19 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+# ALL Static files like js, css will be stored here
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
+MEDIA_URL = '/media/'
+# ALL media files like image, audio, video will be stored here
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static", "static_files"),
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
