@@ -40,13 +40,21 @@ class CompanyProduct(models.Model):
         editable=False,
     )
     company = models.ForeignKey(
-        'company.Company', on_delete=models.CASCADE, verbose_name='Company', related_name='products')
+        "company.Company",
+        on_delete=models.CASCADE,
+        verbose_name="Company",
+        related_name="products",
+    )
     product = models.ForeignKey(
-        'product.Product', on_delete=models.CASCADE, verbose_name='Product', related_name='companies')
-    
+        "product.Product",
+        on_delete=models.CASCADE,
+        verbose_name="Product",
+        related_name="companies",
+    )
+
     class Meta:
-        verbose_name_plural = 'Company products'
-        db_table = 'CompanyProducts'
+        verbose_name_plural = "Company products"
+        db_table = "CompanyProducts"
 
     def __str__(self) -> str:
         return self.company.name

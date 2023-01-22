@@ -25,6 +25,7 @@ startapp = "python3 assignment/manage.py startapp"
 collectstatic = "python3 assignment/manage.py collectstatic"
 fetchcompanies = "python3 assignment/manage.py fetchcompanies"
 fetchproducts = "python3 assignment/manage.py fetchproducts"
+fetchcompanyproducts = "python3 assignment/manage.py fetchcompanyproducts"
 formatcode = "python3 -m black assignment"
 
 [tool.pdm.dev-dependencies]

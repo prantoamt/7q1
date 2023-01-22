@@ -6,6 +6,7 @@ from django.db.models.query import QuerySet
 from rest_framework.response import Response
 from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
+
 # self imports
 from .serializers import CompanySerializer
 from company.models import Company
