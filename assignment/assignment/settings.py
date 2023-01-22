@@ -48,6 +48,7 @@ SELF_APPS = [
     "administration.apps.AdministrationConfig",
     "product.apps.ProductConfig",
     "company.apps.CompanyConfig",
+    "companyproduct.apps.CompanyproductConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS

@@ -7,7 +7,8 @@ from django.conf import settings
 
 # Self imports
 from product.models import Product
-from company.models import Company, CompanyProduct
+from company.models import Company
+from companyproduct.models import CompanyProduct
 
 BASE_DIR = settings.BASE_DIR
 

@@ -4,8 +4,9 @@
 from rest_framework import serializers
 
 # Self imports
-from company.models import Company, CompanyProduct
+from company.models import Company
 from product.models import Product
+from companyproduct.models import CompanyProduct
 from product.api.serializers import ProductSerializer
 
 
