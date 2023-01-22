@@ -2,7 +2,7 @@
 
 # Third party imports
 from rest_framework import serializers
-
+from drf_spectacular.utils import extend_schema_field
 # Self imports
 from company.models import Company
 from product.models import Product
@@ -26,7 +26,8 @@ class CompanySerializer(serializers.ModelSerializer):
             "products",
         ]
 
-    def get_products(self, obj: object):
+    @extend_schema_field(ProductSerializer(many=True))
+    def get_products(self, obj: object) -> list:
         product_ids = CompanyProduct.objects.filter(company_id=obj.id).values_list(
             "product"
         )
