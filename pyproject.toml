@@ -20,7 +20,7 @@ makemigrations = "python3 assignment/manage.py makemigrations"
 migrate = "python3 assignment/manage.py migrate"
 startapp = "python3 assignment/manage.py startapp"
 collectstatic = "python3 assignment/manage.py collectstatic"
-
+fetchcompany = "python3 assignment/manage.py fetchcompany"
 
 requires-python = ">=3.8"
 license = {text = "MIT"}

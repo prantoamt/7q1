@@ -1,5 +1,6 @@
 #!/bin/sh
 pdm makemigrations
 pdm migrate
-pdm collectstatic
+pdm collectstatic --no-input
+pdm fetchcompany
 pdm startdev
