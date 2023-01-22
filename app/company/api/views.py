@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
-from drf_spectacular.types import OpenApiTypes
 
 # self imports
 from .serializers import CompanySerializer
@@ -57,6 +56,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+        
 
     def retrieve(self, request: request, *args: tuple, **kwargs: dict) -> Response:
         query_set = self.company_service.get_queryset(**kwargs).first()

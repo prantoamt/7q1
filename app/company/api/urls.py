@@ -10,5 +10,4 @@ router.register(r"", CompanyViewSet, "companies")
 
 urlpatterns = [
     path("/", include(router.urls)),
-    path("api-token-auth/", views.obtain_auth_token),
 ]
