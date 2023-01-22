@@ -38,8 +38,8 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    ]
-THIRD_PARTY_APPS =[
+]
+THIRD_PARTY_APPS = [
     "rest_framework",
 ]
 SELF_APPS = [
@@ -50,7 +50,7 @@ SELF_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
 
-AUTH_USER_MODEL = 'administration.User'
+AUTH_USER_MODEL = "administration.User"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -85,14 +85,12 @@ WSGI_APPLICATION = "assignment.wsgi.application"
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 20,
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -142,12 +140,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 # ALL Static files like js, css will be stored here
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
+MEDIA_URL = "/media/"
 # ALL media files like image, audio, video will be stored here
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static", "static_files"),

@@ -6,9 +6,9 @@ from company.api.views import CompanyViewSet
 
 router = routers.DefaultRouter()
 
-router.register(r'', CompanyViewSet, 'companies')
+router.register(r"", CompanyViewSet, "companies")
 
 urlpatterns = [
-    path('/', include(router.urls)),
-    path('api-token-auth/', views.obtain_auth_token)
+    path("/", include(router.urls)),
+    path("api-token-auth/", views.obtain_auth_token),
 ]
